@@ -1,16 +1,47 @@
-# React + Vite
+# Vite + Bun + shadcn/ui
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo is a Vite React app wired for Bun and shadcn/ui. It includes:
 
-Currently, two official plugins are available:
+- A home screen in `src/App.jsx`
+- A routed component showcase at `/showcase`
+- A fallback 404 page
+- A theme switcher with light, dark, and system modes
+- Generated shadcn/ui components under `src/components/ui`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- Vite
+- Bun
+- React 19
+- React Router DOM
+- shadcn/ui
+- Tailwind CSS v4
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+```bash
+bun install
+bun dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Available Scripts
+
+```bash
+bun dev
+bun build
+bun lint
+bun preview
+```
+
+## Routes
+
+- `/` renders the existing `App.jsx` home page
+- `/showcase` renders the responsive shadcn component showcase
+- any unknown path renders the 404 page
+
+## Notes
+
+- Global styling lives in `src/index.css`
+- The app uses a `ThemeProvider` from `next-themes`
+- The router is defined in `src/router.jsx`
+- The showcase page is intentionally large because it exercises many generated components in one place
